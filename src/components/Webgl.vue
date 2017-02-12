@@ -1,6 +1,6 @@
 <!-- Home Page -->
 <template lang="html">
-  <div class="home">
+  <div id="webgl">
     {{msg}}
   </div>
 </template>
@@ -10,7 +10,7 @@ export default {
   name: 'home',
   data() {
     return {
-      msg: "Home Page loaded",
+      msg: "Webgl Page loaded",
     }
   },
   methods: {
@@ -20,5 +20,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+  #webgl{
+    color: white;
+    margin-left: 15vw;
+  }
 </style>

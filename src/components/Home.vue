@@ -56,6 +56,7 @@ export default {
   name: 'home',
   data() {
     return {
+      
       msg: "Home Page loaded",
     }
   },
@@ -66,6 +67,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+  // Global Variables
   $break-xs       : 600px;
   $break-sm       : 960px;
   $break-md       : 1280px;
@@ -114,6 +117,9 @@ export default {
 
 
   }
+
+
+  // Local Selectors
   #home {
     padding: 0px;
     @include md-transition-all;
@@ -154,172 +160,173 @@ export default {
           }
         }//End Header
   }
-
   .grid {
 
-  width: 100vw;
-  height: 100%;
-  margin-left: 10vw;
-  margin: 0 auto;
-  padding-top: 4vw;
-  padding-left: 4vw;
-  @include xl {
-    width: 80vw;
-  }
-  @include lg {
-    width: 80vw;
-  }
-  @include md{
-  }
-  @include sm{
-    // margin-left: 0px;
-    width: 100%;
-  }
-  @include xs{
-    margin-left: 0px;
-    padding: 0;
-  }
-  .grid-item {
-    display: inline-block;
-    position: relative;
-    margin:5px;
-    float: left;
-    width: 20vw;
-    height: 20vw;
-    // background-color: #BEBEBE;
-    @include md-transition-all;
-
-    // @include md-shadow;
-    // Responsive attributes
-
-    @include md {
-      width: 33vw;
-      height: 33vw;
-    }
-    @include sm {
-      width: 33vw;
-      height: 33vw;
-    }
-    @include xs {
-      margin: 2px;
-      width: 45vw;
-      height: 45vw;
-    }
-    .wrapper {
-      z-index : 10;
-      position : absolute;
-      top : 0;
-      left : 0;
-      background-color: yellow;
-    }
-
-    &:hover {
-      @include xs {
-
-      }
-      cursor: pointer;
-      @include md-shadow;
-    }
-  }
-  .grid-item--width2 {
-    width: calc(40vw + 10px);
-    @include md {
-      width: calc(66vw + 10px);
-    }
-    @include sm {
-      width: calc(66vw + 10px);
-    }
-    @include xs {
-      width: calc(90vw + 4px);
-    }
-  }
-  // overlay
-  .overlay {
-    position: absolute;
-    width: 100%;
+    width: 100vw;
     height: 100%;
-    background: hsla(0,0,18,0.7);
-    // background: #606060;
-    z-index: 9;
-    &:hover {
-      background: hsla(0,0,18,0.5);
+    margin-left: 10vw;
+    margin: 0 auto;
+    padding-top: 4vw;
+    padding-left: 4vw;
+    @include xl {
+      width: 80vw;
     }
-    @include md-transition-all;
-  }
-  .tag {
-    color: #33F8FF;
-    font-weight: 200;
-    position: absolute;
-    z-index: 10;
-    bottom: 0;
-    left: 0;
-    padding: 10px;
-  }
-  // Grid Classes
-  // Global grid options
-  @mixin grid-image {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    img {
-      @include noselect;
+    @include lg {
+      width: 80vw;
+    }
+    @include md{
+    }
+    @include sm{
+      // margin-left: 0px;
+      width: 100%;
+    }
+    @include xs{
+      margin-left: 0px;
+      padding: 0;
+    }
+    .grid-item {
+      display: inline-block;
       position: relative;
-      flex-shrink: 0;
-      max-width: 100%;
-      min-height: 100%;
-      z-index: 4;
+      margin:5px;
+      float: left;
+      width: 20vw;
+      height: 20vw;
+      // background-color: #BEBEBE;
+      @include md-transition-all;
+
+      // @include md-shadow;
+      // Responsive attributes
+
+      @include md {
+        width: 33vw;
+        height: 33vw;
+      }
+      @include sm {
+        width: 33vw;
+        height: 33vw;
+      }
+      @include xs {
+        margin: 2px;
+        width: 45vw;
+        height: 45vw;
+      }
+      .wrapper {
+        z-index : 10;
+        position : absolute;
+        top : 0;
+        left : 0;
+        background-color: yellow;
+      }
+
+      &:hover {
+        @include xs {
+
+        }
+        cursor: pointer;
+        @include md-shadow;
+      }
     }
-  }
-  @mixin grid-caption {
-    .caption {
-      // font-family: $openSans;
-      font-size: 2.5em;
+    .grid-item--width2 {
+      width: calc(40vw + 10px);
+      @include md {
+        width: calc(66vw + 10px);
+      }
+      @include sm {
+        width: calc(66vw + 10px);
+      }
+      @include xs {
+        width: calc(90vw + 4px);
+      }
+    }
+    // overlay
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: hsla(0,0,18,0.7);
+      // background: #606060;
+      z-index: 9;
+      &:hover {
+        background: hsla(0,0,18,0.5);
+      }
+      @include md-transition-all;
+    }
+    .tag {
+      color: #33F8FF;
       font-weight: 200;
-      color: white;
       position: absolute;
       z-index: 10;
-      @include sm {
-        font-size: 1.7em;
+      bottom: 0;
+      left: 0;
+      padding: 10px;
+    }
+    // Grid Classes
+    // Global grid options
+    @mixin grid-image {
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      img {
+        @include noselect;
+        position: relative;
+        flex-shrink: 0;
+        max-width: 100%;
+        min-height: 100%;
+        z-index: 4;
       }
-      @include noselect;
+    }
+    @mixin grid-caption {
+      .caption {
+        // font-family: $openSans;
+        font-size: 2.5em;
+        font-weight: 200;
+        color: white;
+        position: absolute;
+        z-index: 10;
+        @include sm {
+          font-size: 1.7em;
+        }
+        @include noselect;
+
+      }
+    }
+    #grid-about-me {
+      @include grid-image;
+      @include grid-caption;
+    }
+    #grid-gallery {
+      @include grid-image;
+      @include grid-caption;
 
     }
-  }
-  #grid-about-me {
-    @include grid-image;
-    @include grid-caption;
-  }
-  #grid-gallery {
-    @include grid-image;
-    @include grid-caption;
+    #grid-mars-oasis {
+      @include grid-image;
+      @include grid-caption;
 
-  }
-  #grid-mars-oasis {
-    @include grid-image;
-    @include grid-caption;
+    }
+    #grid-esports {
+      @include grid-image;
+      @include grid-caption;
+    }
+    #grid-vr {
+      @include grid-image;
+      @include grid-caption;
+    }
+    #grid-webgl {
+      @include grid-image;
+      @include grid-caption;
+    }
+    #grid-countdown {
+      @include grid-image;
+      @include grid-caption;
+    }
+    #grid-matrix {
+      @include grid-image;
+      @include grid-caption;
+    }
+  }//END grid
 
-  }
-  #grid-esports {
-    @include grid-image;
-    @include grid-caption;
-  }
-  #grid-vr {
-    @include grid-image;
-    @include grid-caption;
-  }
-  #grid-webgl {
-    @include grid-image;
-    @include grid-caption;
-  }
-  #grid-countdown {
-    @include grid-image;
-    @include grid-caption;
-  }
-  #grid-matrix {
-    @include grid-image;
-    @include grid-caption;
-  }
-}//END grid
+
 </style>

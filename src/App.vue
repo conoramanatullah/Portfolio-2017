@@ -37,6 +37,7 @@
     </div>
     <!-- Our Route loads here -->
     <router-view></router-view>
+
   </div>
 </template>
 
@@ -46,6 +47,11 @@ export default {
   components: [
 
   ],
+  data() {
+    return {
+      show: true
+    }
+  },
   methods: {
     redirect(path){
       window.location = path;
@@ -57,6 +63,7 @@ export default {
 <style lang="scss">
   // Global Style Imports
   @import url('./assets/css/font-awesome.css');
+  @import url('./assets/css/animate.css');
   @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
 
   // SASS Variables
@@ -114,7 +121,9 @@ export default {
   }
   body {
     overflow-x: hidden;
+    margin: 0;
   }
+
   router-view {
     width: 100%;
     height: 100vh;
@@ -219,5 +228,12 @@ export default {
       margin-left: -15vw;
       display: none;
     }
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+    opacity: 0
   }
 </style>
