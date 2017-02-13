@@ -11,7 +11,7 @@ import Skills from 'components/Skills'
 import Vr from 'components/Vr'
 import Webgl from 'components/Webgl'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   mode: 'history',

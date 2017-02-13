@@ -1,69 +1,118 @@
 <!-- Home Page -->
 <template lang="html">
   <div id="home">
+    <div id="splash">
+      <h1>Splash Page</h1>
+    </div>
+    <div class="header">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
     <div class="grid">
       <router-link to="/about" class="grid-item grid-item--width2" id="grid-about-me">
-        <div class="caption">About me</div>
-        <img src="../assets/images/about-me.png" alt="">
-        <div class="overlay"></div>
+        <div  class="caption">
+          <hr>
+          <div class="text">About me</div>
+          <div class="secondary">A short biography.</div>
+          <div class="bar"></div>
+        </div>
+        <img src="../assets/images/header.jpg" alt="">
       </router-link>
       <router-link  to="/skills"class="grid-item" id="grid-gallery">
-        <div class="caption">Skills</div>
+        <div  class="caption">
+          <hr>
+          <div class="text">Skillset</div>
+          <div class="secondary">What I think I'm good at</div>
+          <div class="bar"></div>
+        </div>
         <img src="../assets/images/snippet-2.jpg" alt="">
-        <div class="overlay"></div>
       </router-link>
       <router-link to="mars-oasis" class="grid-item" id="grid-mars-oasis">
-        <div class="caption">MarsOASIS</div>
+        <div  class="caption">
+          <hr>
+          <div class="text">MarsOASIS</div>
+          <div class="secondary">An Ionic Project</div>
+          <div class="bar"></div>
+        </div>
         <div class="tag">Project</div>
-        <img src="../assets/images/marsoasis-large.png" alt="" >
-        <div class="overlay"></div>
-      </router-link>
-      <router-link to="esports" class="grid-item grid-item--width2" id="grid-esports">
-        <div class="caption">eSports</div>
-        <div class="tag">Project</div>
-        <img src="../assets/images/esports-1.png" alt="">
-        <div class="overlay"></div>
+        <img src="../assets/images/marsoasis-large.jpg" alt="" >
       </router-link>
       <router-link to="vr" class="grid-item grid-item--width2" id="grid-vr">
-        <div class="caption">VR</div>
-        <div class="tag">Project</div>
-        <img src="../assets/images/vr-2.png" alt="">
-        <div class="overlay"></div>
+        <div  class="caption">
+          <hr>
+          <div class="text">Nightmare VR</div>
+          <div class="secondary">A First Person Unity VR Project</div>
+          <div class="bar"></div>
+        </div>
+        <img src="../assets/images/vr-3.jpg" alt="">
+      </router-link>
+      <router-link to="esports" class="grid-item grid-item--width2" id="grid-esports">
+        <div  class="caption">
+          <hr>
+          <div class="text">CU eSports</div>
+          <div class="secondary">An AngularJS Project</div>
+          <div class="bar"></div>
+        </div>
+        <img src="../assets/images/esports-1.jpg" alt="">
       </router-link>
       <router-link to="webgl" class="grid-item" id="grid-webgl">
-        <div class="caption">WebGL</div>
-        <div class="tag">Project</div>
+        <div  class="caption">
+          <hr>
+          <div class="text">WebGL</div>
+          <div class="secondary">A THREE.js Experiment</div>
+          <div class="bar"></div>
+        </div>
         <img src="../assets/images/webgl-1.jpg" alt="">
-        <div class="overlay"></div>
       </router-link>
       <router-link to="countdown" class="grid-item" id="grid-countdown">
-        <div class="caption">Countdown</div>
-        <div class="tag">Project</div>
+        <div  class="caption">
+          <hr>
+          <div class="text">Countdown</div>
+          <div class="secondary">A Gift To Kaitlin</div>
+          <div class="bar"></div>
+        </div>
         <img src="../assets/images/countdown-1.jpg" alt="">
-        <div class="overlay"></div>
       </router-link>
       <router-link to="" class="grid-item grid-item--width2" id="grid-matrix">
-        <div class="caption">Matrix Project</div>
-        <div class="tag">Project</div>
-        <img src="../assets/images/CountdownBox/raspberri.png" alt="">
-        <div class="overlay"></div>
+        <div  class="caption">
+          <hr>
+          <div class="text">Matrix Project</div>
+          <div class="secondary">A Venture in Product Design and Rendering</div>
+          <div class="bar"></div>
+        </div>
+        <img src="../assets/images/CountdownBox/raspberri.jpg" alt="">
       </router-link>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'home',
-  data() {
-    return {
-      
-      msg: "Home Page loaded",
-    }
-  },
-  methods: {
+  import imagesLoaded from 'imagesloaded'
 
+  export default {
+    name: 'home',
+    data() {
+      return {
+
+      }
+    },
+    mounted: function() {
+      function closeSplash(){
+        console.log('Closing Splash');
+        document.querySelector('#splash').style.display = "none";
+      };
+      imagesLoaded('.grid-item', function() {
+        console.info('Images Loaded Successfully!');
+        let items = document.querySelectorAll('.grid-item');
+        for(let i = 0; i < items.length ; i++){
+          items[i].querySelector('img').style.display = "block";
+        }
+        // Close Splash
+        closeSplash();
+      });
+    },
+    methods: {
+
+    }
   }
-}
 </script>
 
 <style lang="scss" scoped>
@@ -74,6 +123,7 @@ export default {
   $break-md       : 1280px;
   $break-lg       : 1920px;
   $break-xl       : 2920px;
+  $hoverStatus: 1.5em;
   @mixin xs {
     @media (max-width: #{$break-xs - 1px}) {
       @content;
@@ -117,57 +167,80 @@ export default {
 
 
   }
-
+  router-link{
+    &:hover{
+      cursor: alias;
+    }
+  }
+  hr {
+    padding: 0;
+    margin: -2px;
+    width: 0;
+    @include md-transition-all;
+  }
 
   // Local Selectors
   #home {
+
+
+    // overflow-x: hidden;
     padding: 0px;
     @include md-transition-all;
     margin-left: 15vw;
     @include xs {
       margin-left: 0px;
     }
-    header {
+    #splash {
+      z-index: 100;
+      width: 100vw;
+      height: 100vh;
+    }
+    .header {
+      @include md-transition-all;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 11;
+      // margin-bottom: 6vh;
+      display: none;
+      height: 6vh;
+      @include xs {
+        display: flex;
+      }
+      i {
+        color: white;
+        font-size: 38px;
+        display: none;
+        //Hide Button on larger screens
+        @include xs {
+          display: inline-block;
+        }
+        @include noselect;
 
-          position: relative;
-          display: none;
-          @include xs {
-            display: flex;
-            // text-align: center;
-          }
-          i {
-            color: #33F8FF;
-            font-size: 38px;
-            display: none;
-            //Hide Button on larger screens
-            @include xs {
-              display: inline-block;
-            }
-            @include noselect;
+      }
+      padding-left: 2vw;
+      padding-top: 2vw;
+      padding-bottom: 2vw;
+      span {
+        position: absolute;
+        font-size: 1.8em;
+        font-weight: 200;
+        color: white;
+        right: 4vw;
+        @include noselect;
 
-          }
-          padding-left: 2vw;
-          padding-top: 2vw;
-          padding-bottom: 2vw;
-          span {
-            position: absolute;
-            font-size: 1.8em;
-            font-weight: 200;
-            color: white;
-            right: 4vw;
-            @include noselect;
-
-          }
-        }//End Header
+      }
+    }//End Header
   }
   .grid {
-
     width: 100vw;
     height: 100%;
     margin-left: 10vw;
     margin: 0 auto;
     padding-top: 4vw;
     padding-left: 4vw;
+    overflow: hidden;
     @include xl {
       width: 80vw;
     }
@@ -185,7 +258,7 @@ export default {
       padding: 0;
     }
     .grid-item {
-      display: inline-block;
+      // display: none;
       position: relative;
       margin:5px;
       float: left;
@@ -206,9 +279,9 @@ export default {
         height: 33vw;
       }
       @include xs {
-        margin: 2px;
-        width: 45vw;
-        height: 45vw;
+        margin: 0px;
+        width: 50vw;
+        height: 50vw;
       }
       .wrapper {
         z-index : 10;
@@ -222,12 +295,11 @@ export default {
         @include xs {
 
         }
-        cursor: pointer;
         @include md-shadow;
       }
     }
     .grid-item--width2 {
-      width: calc(40vw + 10px);
+      width: calc(40vw + 0px);
       @include md {
         width: calc(66vw + 10px);
       }
@@ -235,7 +307,7 @@ export default {
         width: calc(66vw + 10px);
       }
       @include xs {
-        width: calc(90vw + 4px);
+        width: calc(100vw);
       }
     }
     // overlay
@@ -248,6 +320,8 @@ export default {
       z-index: 9;
       &:hover {
         background: hsla(0,0,18,0.5);
+        // trigger hoverStatus
+        $hoverStatus: 2.0em;
       }
       @include md-transition-all;
     }
@@ -256,39 +330,123 @@ export default {
       font-weight: 200;
       position: absolute;
       z-index: 10;
-      bottom: 0;
-      left: 0;
+      top: 20px;
+      right: 20px;
       padding: 10px;
+      @include xs{
+        display: none;
+      }
     }
     // Grid Classes
     // Global grid options
     @mixin grid-image {
-
       display: flex;
       justify-content: center;
       align-items: center;
       overflow: hidden;
       img {
+        display: none;
         @include noselect;
         position: relative;
         flex-shrink: 0;
         max-width: 100%;
         min-height: 100%;
         z-index: 4;
+        filter: brightness(40%);
+        @include md-transition-all;
+        &:hover{
+          filter: brightness(100%);
+        }
       }
     }
     @mixin grid-caption {
       .caption {
         // font-family: $openSans;
-        font-size: 2.5em;
+        font-size: 2em;
         font-weight: 200;
         color: white;
         position: absolute;
-        z-index: 10;
+        height: 30%;
+        z-index: 9;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        // padding: 20px;
+        @include xs {
+          // top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height:99%;
+        }
+
+        .text {
+          // padding-left: 20px;
+          z-index: 6;
+          position: absolute;
+          padding: 20px;
+          margin: 0;
+
+        }
+        .secondary {
+          // padding-left: 20px;
+          z-index: 6;
+          padding: 20px;
+          font-size: .5em;
+          position: absolute;
+          width: auto;
+          right: 0;
+          bottom: 0;
+          @include md-transition-all;
+          color: rgba(0,0,0,0);
+          @include xs {
+            display: none;
+          }
+          // display: inline;
+        }
+        .bar {
+          position: absolute;
+          z-index: 5;
+          width: 100%;
+          height: 100%;
+          left:0;
+          bottom: 0px;
+          // background-color: rgba(0,0,0,0.1);
+          // padding-right: 100%;
+          @include md-transition-all;
+          @include xs {
+            display: none;
+          }
+        }
+        // height: 20%
+        @include md-transition-all;
+        &:hover {
+          hr {
+            width: 100%;
+            // font-size: 20px;
+            // height: 1px;
+            color: rgb(51, 248, 255)
+
+          }
+          .bar {
+            width: 100%;
+            // background-color: rgba(51, 248, 255, 0.3);
+            // background-color: rgba(255,255,255,.1)
+
+          }
+          .text {
+            // color: rgb(51, 248, 255);
+          }
+          .secondary {
+            color: white;
+          }
+
+        }
         @include sm {
-          font-size: 1.7em;
+          font-size: 1.5em;
         }
         @include noselect;
+
 
       }
     }
@@ -328,5 +486,13 @@ export default {
     }
   }//END grid
 
+  // .loader {
+  //   position: absolute;
+  //   bottom: 0;
+  //   height: 2px;
+  //   width: 10px;
+  //   background-color: yellow;
+  //   z-index: 11;
+  // }
 
 </style>

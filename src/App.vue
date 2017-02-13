@@ -34,6 +34,15 @@
           Contact
         </div>
       </div>
+      <div class="credits">
+        Built in 2017 with love by Conor Amanatullah
+      </div>
+      <div class="github-label">
+        Interested in the code?
+      </div>
+      <div class="cheat-code-box">
+        Github
+      </div>
     </div>
     <!-- Our Route loads here -->
     <router-view></router-view>
@@ -143,9 +152,13 @@ export default {
     width: 15vw;
     height: 100vh;
     z-index: 10;
+    border-right: 4px grey solid;
     &:hover {
       background-color: #2E2E2E;
       @include md-shadow;
+      @include md-transition-all;
+      border-right: 4px #33F8FF solid;
+
     }
     .name {
       width: 100%;
@@ -196,6 +209,8 @@ export default {
       width: 100%;
       height: 500px;
       color: white;
+      // position: absolute;
+      margin-top: 25vh;
       .link {
         text-align: center;
         font-size: 1.0em;
@@ -224,9 +239,64 @@ export default {
       }
     }
     @include md-transition-all;
+    @include md {
+      border: none;
+    }
     @include xs {
       margin-left: -15vw;
       display: none;
+    }
+  }
+  .credits {
+    @include md {
+      display: none;
+    }
+    margin: 0 auto;
+    margin-top: 90%;
+    // position: absolute;
+    bottom: 100px;
+    width: 60%;
+    color: white;
+    font-size: .8em;
+    font-weight: 100;
+    text-align: center;
+  }
+  .github-label {
+    @include md {
+      display: none;
+    }
+    text-align: center;
+    width: 100%;
+    color: white;
+    position: absolute;
+    bottom: 12.5px;
+    z-index:3;
+  }
+  .cheat-code-box {
+    @include md {
+      display: none;
+    }
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index:4;
+    color: rgba(0,0,0,0);
+    text-align: center;
+    line-height: 50px;
+    input {
+
+      border: none;
+      &:focus{
+        border: none;
+      }
+    }
+    @include md-transition-all;
+    &:hover {
+      cursor: pointer;
+      color: black;
+      background-color: #33F8FF;
     }
   }
 

@@ -2,9 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-// import Masonry from 'masonry-layout'
 import router from './router'
-
+import imagesLoaded from 'imagesloaded'
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
@@ -13,5 +12,19 @@ new Vue({
   components: { App }
 })
 
+// imagesLoaded('.grid', (e) => {
+//   console.info('Images Loaded Successfully!');
+//   let items = document.querySelectorAll('.grid-item');
+//   for(let i = 0; i < items.length ; i++){
+//     // items[i].querySelector('.loader').style.display = 'none';
+//     items[i].querySelector('img').style.display = "inline-block";
+//   }
+// });
 
-// Vue.transition('fade', { enterClass: 'fadeIn', leaveClass: 'fadeOut'})
+// imagesLoaded('.grid-item', function() {
+//   console.info('Images Loaded Successfully!');
+//   let items = document.querySelectorAll('.grid-item');
+//   for(let i = 0; i < items.length ; i++){
+//     items[i].querySelector('img').style.display = "block";
+//   }
+// });
