@@ -40,8 +40,9 @@
       <div class="github-label">
         Interested in the code?
       </div>
-      <div class="cheat-code-box">
-        Github
+      <div class="cheat-code-box" v-on:click="redirect('https://github.com/conoramanatullah/Portfolio-2017')">
+        <i class="fa fa-github" aria-hidden="true"></i>
+        Github Repo
       </div>
     </div>
     <!-- Our Route loads here -->

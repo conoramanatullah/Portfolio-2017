@@ -81,11 +81,13 @@
         </div>
         <img src="../assets/images/CountdownBox/raspberri.jpg" alt="">
       </router-link>
+      <gallery> </gallery>
   </div>
 </template>
 
 <script>
   import imagesLoaded from 'imagesloaded'
+  import Gallery from './Gallery'
 
   export default {
     name: 'home',
@@ -94,20 +96,30 @@
 
       }
     },
+    components: {
+      gallery: Gallery
+    },
+    // NEEDS CHANGED BC THIS DOESNT GET CALLED ON A SERVER
     mounted: function() {
-      function closeSplash(){
-        console.log('Closing Splash');
-        document.querySelector('#splash').style.display = "none";
+
+      function closeItem(query){
+        document.querySelector(query).style.display = "none";
       };
-      imagesLoaded('.grid-item', function() {
-        console.info('Images Loaded Successfully!');
+
+      // Once all images are done loading, they must be activated
+      imagesLoaded('.grid-item', () => {
+        // Grab all grid items
         let items = document.querySelectorAll('.grid-item');
-        for(let i = 0; i < items.length ; i++){
-          items[i].querySelector('img').style.display = "block";
-        }
-        // Close Splash
-        closeSplash();
+        // Transform list into array
+        let itemsArray = Array.from(items);
+        // Mapping applies style to all elements, as default is none
+        itemsArray.map( (item) =>{
+          item.querySelector('img').style.display = 'block';
+        });
+        // Close the splash screen
+        closeItem('#splash');
       });
+
     },
     methods: {
 
