@@ -9,75 +9,68 @@
     </div>
     <div class="grid">
       <router-link to="/about" class="grid-item grid-item--width2" id="grid-about-me">
-        <div  class="caption">
+        <div class="text">About me</div>
+        <div  class="caption" v-on:mouseover="brighten('#home .grid #grid-about-me img')" v-on:mouseout="darken('#home .grid #grid-about-me img')">
           <hr>
-          <div class="text">About me</div>
           <div class="secondary">A short biography.</div>
-          <div class="bar"></div>
         </div>
+
         <img src="../assets/images/header.jpg" alt="">
       </router-link>
       <router-link  to="/skills"class="grid-item" id="grid-gallery">
-        <div  class="caption">
+        <div class="text">Skillset</div>
+        <div  class="caption" v-on:mouseover="brighten('#home .grid #grid-gallery img')" v-on:mouseout="darken('#home .grid #grid-gallery img')">
           <hr>
-          <div class="text">Skillset</div>
           <div class="secondary">What I think I'm good at</div>
-          <div class="bar"></div>
         </div>
         <img src="../assets/images/snippet-2.jpg" alt="">
       </router-link>
       <router-link to="mars-oasis" class="grid-item" id="grid-mars-oasis">
-        <div  class="caption">
+        <div class="text">MarsOASIS</div>
+        <div  class="caption" v-on:mouseover="brighten('#home .grid #grid-mars-oasis img')" v-on:mouseout="darken('#home .grid #grid-mars-oasis img')">
           <hr>
-          <div class="text">MarsOASIS</div>
           <div class="secondary">An Ionic Project</div>
-          <div class="bar"></div>
         </div>
-        <div class="tag">Project</div>
+        <!-- <div class="tag">Project</div> -->
         <img src="../assets/images/marsoasis-large.jpg" alt="" >
       </router-link>
       <router-link to="vr" class="grid-item grid-item--width2" id="grid-vr">
-        <div  class="caption">
+        <div class="text">Nightmare VR</div>
+        <div  class="caption" v-on:mouseover="brighten('#home .grid #grid-vr img')" v-on:mouseout="darken('#home .grid #grid-vr img')">
           <hr>
-          <div class="text">Nightmare VR</div>
           <div class="secondary">A First Person Unity VR Project</div>
-          <div class="bar"></div>
         </div>
         <img src="../assets/images/vr-3.jpg" alt="">
       </router-link>
       <router-link to="esports" class="grid-item grid-item--width2" id="grid-esports">
-        <div  class="caption">
+        <div class="text">CU eSports</div>
+        <div  class="caption" v-on:mouseover="brighten('#home .grid #grid-esports img')" v-on:mouseout="darken('#home .grid #grid-esports img')">
           <hr>
-          <div class="text">CU eSports</div>
           <div class="secondary">An AngularJS Project</div>
-          <div class="bar"></div>
         </div>
         <img src="../assets/images/esports-1.jpg" alt="">
       </router-link>
       <router-link to="webgl" class="grid-item" id="grid-webgl">
-        <div  class="caption">
+        <div class="text">WebGL</div>
+        <div  class="caption" v-on:mouseover="brighten('#home .grid #grid-webgl img')" v-on:mouseout="darken('#home .grid #grid-webgl img')">
           <hr>
-          <div class="text">WebGL</div>
           <div class="secondary">A THREE.js Experiment</div>
-          <div class="bar"></div>
         </div>
         <img src="../assets/images/webgl-1.jpg" alt="">
       </router-link>
       <router-link to="countdown" class="grid-item" id="grid-countdown">
-        <div  class="caption">
+        <div class="text">Countdown</div>
+        <div  class="caption" v-on:mouseover="brighten('#home .grid #grid-countdown img')" v-on:mouseout="darken('#home .grid #grid-countdown img')">
           <hr>
-          <div class="text">Countdown</div>
           <div class="secondary">A Gift To Kaitlin</div>
-          <div class="bar"></div>
         </div>
         <img src="../assets/images/countdown-1.jpg" alt="">
       </router-link>
       <router-link to="" class="grid-item grid-item--width2" id="grid-matrix">
-        <div  class="caption">
+        <div class="text">Matrix Project</div>
+        <div  class="caption" v-on:mouseover="brighten('#home .grid #grid-matrix img')" v-on:mouseout="darken('#home .grid #grid-matrix img')">
           <hr>
-          <div class="text">Matrix Project</div>
           <div class="secondary">A Venture in Product Design and Rendering</div>
-          <div class="bar"></div>
         </div>
         <img src="../assets/images/CountdownBox/raspberri.jpg" alt="">
       </router-link>
@@ -122,7 +115,12 @@
 
     },
     methods: {
-
+      brighten: function(query){
+        document.querySelector(query).style.filter = 'brightness(80%)'
+      },
+      darken: function(query){
+        document.querySelector(query).style.filter = 'brightness(20%)'
+      }
     }
   }
 </script>
@@ -186,8 +184,9 @@
   }
   hr {
     padding: 0;
-    margin: -2px;
+    margin: -8px;
     width: 0;
+    border: 4px solid;
     @include md-transition-all;
   }
 
@@ -250,8 +249,8 @@
     height: 100%;
     margin-left: 10vw;
     margin: 0 auto;
-    padding-top: 4vw;
-    padding-left: 4vw;
+    padding-left: 1vw;
+    padding-top: 1vw;
     overflow: hidden;
     @include xl {
       width: 80vw;
@@ -259,10 +258,7 @@
     @include lg {
       width: 80vw;
     }
-    @include md{
-    }
-    @include sm{
-      // margin-left: 0px;
+    @include sm {
       width: 100%;
     }
     @include xs{
@@ -272,7 +268,7 @@
     .grid-item {
       // display: none;
       position: relative;
-      margin:5px;
+      // margin:5px;
       float: left;
       width: 20vw;
       height: 20vw;
@@ -295,6 +291,16 @@
         width: 50vw;
         height: 50vw;
       }
+      .text {
+        font-size: 2em;
+        font-weight: 300;
+        color: white;
+        text-align: center;
+        z-index: 6;
+        margin: auto;
+        position: absolute;
+        line-height: 20vw;
+      }
       .wrapper {
         z-index : 10;
         position : absolute;
@@ -307,7 +313,7 @@
         @include xs {
 
         }
-        @include md-shadow;
+        // @include md-shadow;
       }
     }
     .grid-item--width2 {
@@ -322,21 +328,7 @@
         width: calc(100vw);
       }
     }
-    // overlay
-    .overlay {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: hsla(0,0,18,0.7);
-      // background: #606060;
-      z-index: 9;
-      &:hover {
-        background: hsla(0,0,18,0.5);
-        // trigger hoverStatus
-        $hoverStatus: 2.0em;
-      }
-      @include md-transition-all;
-    }
+
     .tag {
       color: #33F8FF;
       font-weight: 200;
@@ -349,8 +341,7 @@
         display: none;
       }
     }
-    // Grid Classes
-    // Global grid options
+
     @mixin grid-image {
       display: flex;
       justify-content: center;
@@ -364,21 +355,22 @@
         max-width: 100%;
         min-height: 100%;
         z-index: 4;
-        filter: brightness(40%);
+        filter: brightness(20%);
         @include md-transition-all;
         &:hover{
           filter: brightness(100%);
         }
       }
     }
+
     @mixin grid-caption {
       .caption {
         // font-family: $openSans;
         font-size: 2em;
-        font-weight: 200;
+        font-weight: 300;
         color: white;
         position: absolute;
-        height: 30%;
+        height: 99%;
         z-index: 9;
         bottom: 0;
         left: 0;
@@ -392,14 +384,7 @@
           height:99%;
         }
 
-        .text {
-          // padding-left: 20px;
-          z-index: 6;
-          position: absolute;
-          padding: 20px;
-          margin: 0;
 
-        }
         .secondary {
           // padding-left: 20px;
           z-index: 6;
@@ -411,9 +396,7 @@
           bottom: 0;
           @include md-transition-all;
           color: rgba(0,0,0,0);
-          @include xs {
-            display: none;
-          }
+          @include xs {display: none;}
           // display: inline;
         }
         .bar {
@@ -423,43 +406,28 @@
           height: 100%;
           left:0;
           bottom: 0px;
+          text-align: center;
           // background-color: rgba(0,0,0,0.1);
           // padding-right: 100%;
           @include md-transition-all;
-          @include xs {
-            display: none;
-          }
+          @include xs {display: none;}
         }
         // height: 20%
         @include md-transition-all;
         &:hover {
           hr {
             width: 100%;
-            // font-size: 20px;
-            // height: 1px;
             color: rgb(51, 248, 255)
 
-          }
-          .bar {
-            width: 100%;
-            // background-color: rgba(51, 248, 255, 0.3);
-            // background-color: rgba(255,255,255,.1)
-
-          }
-          .text {
-            // color: rgb(51, 248, 255);
           }
           .secondary {
             color: white;
           }
 
         }
-        @include sm {
-          font-size: 1.5em;
-        }
+
+        @include sm {font-size: 1.5em;}
         @include noselect;
-
-
       }
     }
     #grid-about-me {

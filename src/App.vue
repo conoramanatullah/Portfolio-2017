@@ -2,6 +2,9 @@
   <div id="app">
     <div id="sidebar">
       <div class="name">
+        <div class="">
+          (insert logo here)
+        </div>
         <div class="first">
           conor
         </div>
@@ -127,6 +130,7 @@ export default {
   // Global Styles
   html {
     background-color: #141414;
+    color: white;
     padding: 0px;
   }
   body {
@@ -143,7 +147,6 @@ export default {
     font-family: $openSans;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
     display: flex;
   }
   #sidebar {
@@ -153,12 +156,12 @@ export default {
     width: 15vw;
     height: 100vh;
     z-index: 10;
-    border-right: 4px grey solid;
+    border-right: 1px #2E2E2E solid;
     &:hover {
       background-color: #2E2E2E;
       @include md-shadow;
       @include md-transition-all;
-      border-right: 4px #33F8FF solid;
+      border-right: 10px #33F8FF solid;
 
     }
     .name {
@@ -167,7 +170,7 @@ export default {
       font-weight: 200;
       line-height: 2.1em;
       padding: 15px;
-      padding-top: 7vh;
+      padding-top: 25vh;
       @include md {
         line-height: 1.5em;
       }
@@ -211,7 +214,7 @@ export default {
       height: 500px;
       color: white;
       // position: absolute;
-      margin-top: 25vh;
+      margin-top: 5vh;
       .link {
         text-align: center;
         font-size: 1.0em;

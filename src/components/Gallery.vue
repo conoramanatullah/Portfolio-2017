@@ -77,7 +77,7 @@ export default {
     height: 20vw;
     margin: 5px;
     overflow: hidden;
-    background-color: yellow;
+    background-color: #2E2E2E;
     .controls {
       .left {
 
