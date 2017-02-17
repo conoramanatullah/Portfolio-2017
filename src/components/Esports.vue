@@ -1,7 +1,7 @@
 <!-- Home Page -->
 <template lang="html">
   <div class="home">
-    {{msg}}
+    Woah, you're here early! Sorry there's nothing here yet.. Keep checking, I update this DAILY as I work on it.
   </div>
 </template>
 

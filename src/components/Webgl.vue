@@ -1,7 +1,7 @@
 <!-- Home Page -->
 <template lang="html">
   <div id="webgl">
-    {{msg}}
+    Woah, you're here early! Sorry there's nothing here.. Keep checking, I update this DAILY.
   </div>
 </template>
 

@@ -2,7 +2,7 @@
 <template lang="html">
   <div id="home">
     <div id="splash">
-      <h1>Splash Page</h1>
+      <!-- <h1>Splash Page</h1> -->
     </div>
     <div class="header">
       <i class="fa fa-bars" aria-hidden="true"></i>
@@ -74,7 +74,7 @@
         </div>
         <img src="../assets/images/CountdownBox/raspberri.jpg" alt="">
       </router-link>
-      <gallery> </gallery>
+      <!-- <gallery> </gallery> -->
   </div>
 </template>
 

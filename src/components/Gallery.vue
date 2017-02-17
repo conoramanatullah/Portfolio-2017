@@ -13,7 +13,7 @@
     </div>
     <!-- Caption -->
     <div class="caption">
-      hey
+
     </div>
     <!-- Image Containers -->
     <div class="previous">
