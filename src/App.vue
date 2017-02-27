@@ -28,7 +28,7 @@
           <i class="fa fa-headphones" aria-hidden="true"></i>
           Music
         </div>
-        <div class="link">
+        <div class="link" v-on:click="redirect('https://drive.google.com/open?id=0B56ffiY8xfWAYnFhSGw1QTBCZnc')">
           <i class="fa fa-paperclip" aria-hidden="true"></i>
           Resume
         </div>

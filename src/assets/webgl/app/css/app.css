@@ -1,0 +1,107 @@
+body {
+  /*text-align: center;*/
+  margin: 0 auto;
+  overflow: hidden;
+}
+#interface {
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin-left: 3em;
+  color: white;
+  margin: 3em auto;
+
+
+  z-index: 1000;
+  width: 40vw;
+  height: 80vh;
+  /*background-color: blue;*/
+  /*background: none;*/
+  position: absolute;
+}
+
+#interface h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3em
+}
+#interface-navigation {
+  display: inline-block;
+  padding: 2em;
+  /*padding-top: 100px;*/
+  /*margin-bottom: 10000px;*/
+  margin: 0 auto;
+}
+.navigation-link {
+  font-size: 1.5em;
+  margin: 10px;
+}
+.navigation-link:hover{
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+#interface-content {
+  display: none;
+  margin-left: 15vw;
+}
+
+#interface-panel-1 {
+  /*height: 20vh;*/
+  width: 90%;
+  padding: 20px;
+  border-radius: 7px;
+  border: 1px solid white;
+}
+#container {
+  background: url('../../assets/galaxy.jpg');
+  position: relative;
+  z-index: 1;
+}
+#container:hover{
+  cursor: pointer;
+}
+
+/*font-family: 'Oswald', sans-serif;
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Inconsolata', monospace;*/
+.selective-list ul{
+  list-style: none;
+}
+.selective-list ul li{
+  /*text-align: center;*/
+  padding: 5px;
+  font-size: 1.5em;
+  width: 100px;
+  height: 100%;
+
+
+}
+.selective-list ul li:hover{
+  /*border: solid white;*/
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.button-large {
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1.5em;
+  width: 100%;
+  height: auto;
+}
+.button-large:hover{
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.3);
+
+}
+
+
+@media (max-width: 500px){
+  #interface {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 1000px) {
+  #interface {
+    width: 60vw;
+  }
+}
