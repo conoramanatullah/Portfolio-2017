@@ -58,14 +58,14 @@
         </div>
         <img src="../assets/images/webgl-1.jpg" alt="">
       </div>
-      <router-link to="countdown" class="grid-item" id="grid-countdown">
+      <div v-on:click="redirect('http://creative.colorado.edu/~coam5431/fwd/assets/countdown/')" class="grid-item" id="grid-countdown">
         <div class="text">Countdown</div>
         <div  class="caption" v-on:mouseover="brighten('#home .grid #grid-countdown img')" v-on:mouseout="darken('#home .grid #grid-countdown img')">
           <hr>
           <div class="secondary">A Gift To Kaitlin</div>
         </div>
         <img src="../assets/images/countdown-1.jpg" alt="">
-      </router-link>
+      </div>
       <router-link to="" class="grid-item grid-item--width2" id="grid-matrix">
         <div class="text">Matrix Project</div>
         <div  class="caption" v-on:mouseover="brighten('#home .grid #grid-matrix img')" v-on:mouseout="darken('#home .grid #grid-matrix img')">
