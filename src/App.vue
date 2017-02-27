@@ -6,10 +6,10 @@
           (insert logo here)
         </div>
         <div class="first">
-          conor
+          Conor
         </div>
         <div class="last">
-          amanatullah
+          Amanatullah
         </div>
         <div class="caption">
           developer / musician / creator
@@ -37,9 +37,9 @@
           Contact
         </div>
       </div>
-      <div class="credits">
+      <!-- <div class="credits">
         Built in 2017 with love by Conor Amanatullah
-      </div>
+      </div> -->
       <div class="github-label">
         Interested in the code?
       </div>
@@ -178,7 +178,7 @@ export default {
         line-height: 1.3em;
       }
       .first {
-        font-size: 2em;
+        font-size: 2.5em;
         @include lg {
           font-size: 1.5em;
         }

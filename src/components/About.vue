@@ -24,10 +24,45 @@
       <div class="">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </div>
+      <div class="">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+      <hr>
+      <div class="title">
+        Gallery
+      </div>
+      <div class="title">
+        Favorite Projects
+      </div>
+      <div class="projects">
+        <div class="image">
+          <img src="../assets/images/avatar.jpg" alt="">
+        </div>
+        <div class="image">
+          <img src="../assets/images/avatar.jpg" alt="">
+        </div>
+        <div class="image">
+          <img src="../assets/images/avatar.jpg" alt="">
+        </div>
+        <div class="image">
+          <img src="../assets/images/avatar.jpg" alt="">
+        </div>
+      </div>
     </div>
     <div class="content-gallery">
-
-    </div>
+      <div class="box">
+        <img src="../assets/images/me.jpg"alt="">
+      </div>
+      <div class="box">
+        <img src="../assets/images/about-me.jpg" alt="">
+      </div>
+      <!-- <div class="box">
+        <img src="../assets/images/snippet-2.jpg" alt="">
+      </div>
+      <div class="box">
+        <img src="../assets/images/snippet-2.jpg" alt="">
+      </div>
+    </div> -->
   </div>
 </template>
 
@@ -117,6 +152,7 @@ $break-xl       : 2920px;
         padding-left: 10px;
       }
       .back-button {
+        width: 100px;
         cursor: pointer;
       }
     }
@@ -125,6 +161,12 @@ $break-xl       : 2920px;
       flex: 1 1 auto;
       width: 70%;
       padding: 100px;
+      color: grey;
+      // background-color: grey;
+      &:hover {
+        color: white;
+        background-color: #2E2E2E;
+      }
       .title {
         font-size: 3em;
         font-weight: 200;
@@ -140,6 +182,7 @@ $break-xl       : 2920px;
           img {
             width: 100%;
             min-height: 100%;
+            object-fit: contain;
           }
           @include sm {
             display: none;
@@ -155,18 +198,60 @@ $break-xl       : 2920px;
           width: 100%;
         }
       }
+      @include xs {
+        background-color: #2E2E2E;
+      }
 
       @include xs {
         padding: 50px;
+      }
+    }
+    .projects {
+      display: flex;
+      flex-direction: row;
+      .image {
+        @include md-shadow;
+        @include md-transition-all;
+        width: 10vw;
+        height: 10vw;
+        background-color: yellow;
+        margin: 5px;
+        filter: brightness(40%);
+        &:hover{
+          cursor: pointer;
+          filter: brightness(100%);
+
+        }
+        img {
+          width: 100%;
+        }
       }
     }
     .content-gallery {
       @include md-transition-all;
       width: 30%;
       height: 100%;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      padding: 0;
+      margin: 0;
       @include xs {
         width: 100%;
         height: 20%;
+      }
+      .box {
+        width: 100%;
+        height: 50%;
+        flex: 1 1 1;
+        overflow: hidden;
+        img {
+          min-width: 100%;
+          height: 100%;
+        }
+      }
+      @include md {
+        display: none;
       }
     }
     @include xs{

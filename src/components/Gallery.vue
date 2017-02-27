@@ -2,41 +2,39 @@
   <div class="gallery-container">
     <!-- Controls -->
     <div class="controls">
-      <!-- Change to previous image -->
-      <div class="left">
-
-      </div>
-      <!-- Change to next image -->
-      <div class="right">
-
-      </div>
+      <div class="left" v-on:click="prev()"></div>
+      <div class="right" v-on:click="next()"></div>
     </div>
     <!-- Caption -->
     <div class="caption">
 
     </div>
     <!-- Image Containers -->
-    <div class="previous">
+    <div class="images" id="images">
+      <!-- <div class="imagebox previous">
+        <img src="../assets/images/avatar.jpg" alt="">
+      </div> -->
 
+      <div class="imagebox current">
+        <img :src="img" alt="">
+      </div>
+
+      <!-- <div class="imagebox next">
+        <img src="../assets/images/avatar.jpg" alt="">
+      </div> -->
     </div>
 
-    <div class="current">
-
-    </div>
-
-    <div class="next">
-
-    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Gallery',
-  props:['images','captions','slideshow'],
+  // props:['images','captions','slideshow'],
   data() {
     return {
-      index: 0
+      index: 0,
+      img: "../assets/images/avatar.jpg",
     }
   },
   computed: {
@@ -57,10 +55,14 @@ export default {
                           return this.slides[p] },
 
     next: function () {
-      // Called when right button is pressed
+      let el = document.querySelector('.gallery-container #images');
+      // Build image to right, transition, and delete previous
+
+
 
     },
     prev: function  () {
+      let el = document.querySelector('.gallery-container #images');
 
     },
     runSlideshow: function  () {
@@ -72,31 +74,55 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@mixin md-transition-all {
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
   .gallery-container{
     width:20vw;
     height: 20vw;
-    margin: 5px;
     overflow: hidden;
     background-color: #2E2E2E;
     .controls {
+      display: flex;
+      height: 20vw;
+      width: 20vw;
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      z-index: 10;
       .left {
-
+        width: 50%;
+        @include md-transition-all;
+        &:hover{
+          cursor: pointer;
+          // background-color: white;
+        }
       }
       .right {
-
+        width: 50%;
+        @include md-transition-all;
+        &:hover{
+          cursor: pointer;
+          // background-color: white;
+        }
       }
 
     }
     .caption {
 
     }
-    .previous {
-
+    .images {
+      display: flex;
+      width: 100%;
+      margin-right: 40vw;
+      right: 0;
+      // position: absolute;
+      @include md-transition-all;
+      img {
+        max-width: 100%;
+      }
     }
-    .current {
-
-    }
-    .next {
+    .imagebox {
 
     }
   }
