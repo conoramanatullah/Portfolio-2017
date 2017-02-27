@@ -16,7 +16,6 @@
       </div> -->
 
       <div class="imagebox current">
-        <img :src="img" alt="">
       </div>
 
       <!-- <div class="imagebox next">
@@ -34,7 +33,6 @@ export default {
   data() {
     return {
       index: 0,
-      img: "../assets/images/avatar.jpg",
     }
   },
   computed: {

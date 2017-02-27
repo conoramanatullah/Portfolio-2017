@@ -200,6 +200,7 @@ $break-xl       : 2920px;
       }
       @include xs {
         background-color: #2E2E2E;
+        width: 74%;
       }
 
       @include xs {

@@ -11,20 +11,3 @@ new Vue({
   template: '<App/>',
   components: { App }
 })
-
-// imagesLoaded('.grid', (e) => {
-//   console.info('Images Loaded Successfully!');
-//   let items = document.querySelectorAll('.grid-item');
-//   for(let i = 0; i < items.length ; i++){
-//     // items[i].querySelector('.loader').style.display = 'none';
-//     items[i].querySelector('img').style.display = "inline-block";
-//   }
-// });
-
-// imagesLoaded('.grid-item', function() {
-//   console.info('Images Loaded Successfully!');
-//   let items = document.querySelectorAll('.grid-item');
-//   for(let i = 0; i < items.length ; i++){
-//     items[i].querySelector('img').style.display = "block";
-//   }
-// });

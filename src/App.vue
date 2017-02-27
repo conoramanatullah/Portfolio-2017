@@ -3,7 +3,7 @@
     <div id="sidebar">
       <div class="name">
         <div class="">
-          (insert logo here)
+          <!-- (insert logo here) -->
         </div>
         <div class="first">
           Conor
@@ -37,9 +37,6 @@
           Contact
         </div>
       </div>
-      <!-- <div class="credits">
-        Built in 2017 with love by Conor Amanatullah
-      </div> -->
       <div class="github-label">
         Interested in the code?
       </div>

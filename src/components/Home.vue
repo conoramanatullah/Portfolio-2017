@@ -25,7 +25,7 @@
         </div>
         <img src="../assets/images/snippet-2.jpg" alt="">
       </router-link>
-      <router-link to="mars-oasis" class="grid-item" id="grid-mars-oasis">
+      <div  v-on:click="redirect('https://github.com/conoramanatullah/MarsOASIS')"class="grid-item" id="grid-mars-oasis">
         <div class="text">MarsOASIS</div>
         <div  class="caption" v-on:mouseover="brighten('#home .grid #grid-mars-oasis img')" v-on:mouseout="darken('#home .grid #grid-mars-oasis img')">
           <hr>
@@ -33,31 +33,31 @@
         </div>
         <!-- <div class="tag">Project</div> -->
         <img src="../assets/images/marsoasis-large.jpg" alt="" >
-      </router-link>
-      <router-link to="vr" class="grid-item grid-item--width2" id="grid-vr">
+      </div>
+      <div v-on:click="redirect('https://www.youtube.com/watch?v=dkW_bZY6ZtA')" class="grid-item grid-item--width2" id="grid-vr">
         <div class="text">Nightmare VR</div>
         <div  class="caption" v-on:mouseover="brighten('#home .grid #grid-vr img')" v-on:mouseout="darken('#home .grid #grid-vr img')">
           <hr>
           <div class="secondary">A First Person Unity VR Project</div>
         </div>
         <img src="../assets/images/vr-3.jpg" alt="">
-      </router-link>
-      <router-link to="esports" class="grid-item grid-item--width2" id="grid-esports">
+      </div>
+      <div v-on:click="redirect('https://esports-dev.firebaseapp.com/')"class="grid-item grid-item--width2" id="grid-esports">
         <div class="text">CU eSports</div>
         <div  class="caption" v-on:mouseover="brighten('#home .grid #grid-esports img')" v-on:mouseout="darken('#home .grid #grid-esports img')">
           <hr>
           <div class="secondary">An AngularJS Project</div>
         </div>
         <img src="../assets/images/esports-1.jpg" alt="">
-      </router-link>
-      <router-link to="webgl" class="grid-item" id="grid-webgl">
+      </div>
+      <div v-on:click="redirect('http://creative.colorado.edu/~coam5431/fwd/assets/projects/project2/final/app/index.html')" class="grid-item" id="grid-webgl">
         <div class="text">WebGL</div>
         <div  class="caption" v-on:mouseover="brighten('#home .grid #grid-webgl img')" v-on:mouseout="darken('#home .grid #grid-webgl img')">
           <hr>
           <div class="secondary">A THREE.js Experiment</div>
         </div>
         <img src="../assets/images/webgl-1.jpg" alt="">
-      </router-link>
+      </div>
       <router-link to="countdown" class="grid-item" id="grid-countdown">
         <div class="text">Countdown</div>
         <div  class="caption" v-on:mouseover="brighten('#home .grid #grid-countdown img')" v-on:mouseout="darken('#home .grid #grid-countdown img')">
@@ -74,6 +74,30 @@
         </div>
         <img src="../assets/images/CountdownBox/raspberri.jpg" alt="">
       </router-link>
+      <div v-on:click="redirect('http://creative.colorado.edu/~coam5431/fwd/assets/vinylog/public/')" class="grid-item" id="grid-vinyl">
+        <div class="text">vinyLog V2.0</div>
+        <div  class="caption" v-on:mouseover="brighten('#home .grid #grid-vinyl img')" v-on:mouseout="darken('#home .grid #grid-vinyl img')">
+          <hr>
+          <div class="secondary">A Way to store your records</div>
+        </div>
+        <img src="../assets/images/vinyl.jpg" alt="">
+      </div>
+      <div v-on:click="redirect('http://creative.colorado.edu/~coam5431/fwd/assets/projects/project3/index.html')" class="grid-item" id="grid-vinylbeta">
+        <div class="text">vinyLog V1.0</div>
+        <div  class="caption" v-on:mouseover="brighten('#home .grid #grid-vinylbeta img')" v-on:mouseout="darken('#home .grid #grid-vinylbeta img')">
+          <hr>
+          <div class="secondary">The first version of vinyLog</div>
+        </div>
+        <img src="../assets/images/vinylbeta.jpg" alt="">
+      </div>
+      <div v-on:click="redirect('http://creative.colorado.edu/~coam5431/fwd/assets/projects/project1/final/app/index.html')" class="grid-item" id="grid-djent">
+        <div class="text">Djent</div>
+        <div  class="caption" v-on:mouseover="brighten('#home .grid #grid-djent img')" v-on:mouseout="darken('#home .grid #grid-djent img')">
+          <hr>
+          <div class="secondary">An educational UX experiment</div>
+        </div>
+        <img src="../assets/images/djent.jpg" alt="">
+      </div>
       <!-- <gallery> </gallery> -->
   </div>
 </template>
@@ -120,6 +144,9 @@
       },
       darken: function(query){
         document.querySelector(query).style.filter = 'brightness(20%)'
+      },
+      redirect: function(location){
+        window.location.href = location;
       }
     }
   }
@@ -361,6 +388,9 @@
           filter: brightness(100%);
         }
       }
+      &:hover{
+        cursor: pointer;
+      }
     }
 
     @mixin grid-caption {
@@ -461,6 +491,18 @@
       @include grid-caption;
     }
     #grid-matrix {
+      @include grid-image;
+      @include grid-caption;
+    }
+    #grid-vinyl {
+      @include grid-image;
+      @include grid-caption;
+    }
+    #grid-vinylbeta {
+      @include grid-image;
+      @include grid-caption;
+    }
+    #grid-djent {
       @include grid-image;
       @include grid-caption;
     }
